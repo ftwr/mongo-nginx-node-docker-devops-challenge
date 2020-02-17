@@ -25,7 +25,34 @@ services:
     depends_on:
       - mongo
     networks:
-      - app-network 
+      - app-network
+  app2:
+    container_name: app2
+    restart: always
+    build: .
+    ports:
+      - "3001:3000"
+    environment:
+      - MONGODB_URL=mongodb://root:supersecret@mongo:27017/admin
+      #- PORT=3000
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+      
+  app3:
+    container_name: app3
+    restart: always
+    build: .
+    ports:
+      - "3002:3000"
+    environment:
+      - MONGODB_URL=mongodb://root:supersecret@mongo:27017/admin
+      #- PORT=3000
+    depends_on:
+      - mongo
+    networks:
+      - app-network
 
   mongo:
     container_name: mongo
