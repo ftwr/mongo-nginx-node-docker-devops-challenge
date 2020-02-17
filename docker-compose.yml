@@ -26,6 +26,7 @@ services:
       - mongo
     networks:
       - app-network
+  
   app2:
     container_name: app2
     restart: always
