@@ -61,7 +61,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=supersecret
-      #- MONGODB_URL=localhost
+      - MONGODB_URL=mongodb://mongo:27017
     volumes:
       - ./data:/data/db
     ports:
